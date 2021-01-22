@@ -1,2 +1,2 @@
 # NetflixApp
-android :: Remake do aplicativo da Netflix - Desenvolvido durante o curso "Android Express" do Tiago Aguiar!
+android :: Remake do aplicativo da **Netflix**. Abordagens: AsyncTask, RecyclerView, Carrossel de Filmes, PLaceholders, Requisição Web e Api - Desenvolvido durante o curso "Android Express" do Tiago Aguiar!
