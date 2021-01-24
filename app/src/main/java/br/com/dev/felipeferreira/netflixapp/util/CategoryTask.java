@@ -63,7 +63,7 @@ public class CategoryTask extends AsyncTask <String, Void, List<Categoria>> {
             //Posso retornar tanto um HTTP quanto um HTTPS
             HttpsURLConnection urlConnection = (HttpsURLConnection) requestUrl.openConnection(); //Abrindo uma conexão com a url
             urlConnection.setReadTimeout(2000); //Tempo de espera de leitura 2 segundos
-            urlConnection.setConnectTimeout(2000); //Tempo para mostrar uma mensagem de erro, cajo a internet tenha caído
+            urlConnection.setConnectTimeout(2000); //Tempo para mostrar uma mensagem de erro, caso a internet tenha caído
 
             int responseCode = urlConnection.getResponseCode(); //Pegando a resposta do servidor da url que esta hospedando as imagens
 
