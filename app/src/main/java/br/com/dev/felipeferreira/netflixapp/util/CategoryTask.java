@@ -26,7 +26,8 @@ import br.com.dev.felipeferreira.netflixapp.model.Filme;
 
 // Task é uma tarefa que vai acontecer em background (Esta classe é uma classe utilitária, para fazer downloads da internet)
 public class CategoryTask extends AsyncTask <String, Void, List<Categoria>> {
-
+    /* WeakReference é uma "referência fraca" para que se o android destruir minha main activity,
+    eu não fique preso a esta atividade, mas sim que ela se destrua também! */
     private final WeakReference <Context> context;
     private ProgressDialog dialog;
     private CategoryLoader categoryLoader;
@@ -51,6 +52,7 @@ public class CategoryTask extends AsyncTask <String, Void, List<Categoria>> {
     }
 
     // Este método vai ser executado em uma outra Thread (em background) - Vai renderizar as imagens de um servidor
+    // Vai "Trazer as imagens da internet"
     @Override
     protected List<Categoria> doInBackground(String... strings) {
         String url = strings[0]; /*Pegando os parâmetros da URL*/
@@ -74,14 +76,14 @@ public class CategoryTask extends AsyncTask <String, Void, List<Categoria>> {
 
             InputStream inputStream = urlConnection.getInputStream(); //inputStream é uma sequência de bytes que é tratada como imagem, texto etc..
 
-            BufferedInputStream in = new BufferedInputStream(inputStream); //Buffer para alocar um espaço de memória pra poder manipular o Stream
+            BufferedInputStream bis = new BufferedInputStream(inputStream); //Buffer para alocar um espaço de memória pra poder manipular o Stream
 
-            String jsonAsString = toString(in); // Chamando o método toString, para passar os bytes de dados já convertidos do Stream em String
+            String jsonAsString = toString(bis); // Chamando o método toString, para passar os bytes de dados já convertidos do Stream em String
             Log.i("Teste", jsonAsString);
 
             //                          Retornando a lista de categoria de filmes
             List<Categoria> categorias = getCategorias(new JSONObject(jsonAsString)); //Convertendo toda a String gigantesca em um JSON Object
-            in.close();
+            bis.close();
 
             return categorias; //Se der tudo certo, retorno a lista pronta de categorias.
 
@@ -99,7 +101,7 @@ public class CategoryTask extends AsyncTask <String, Void, List<Categoria>> {
     //Criando um método para retornar uma lista pronta de categorias de filmes
     //Dica: para a dicionar o JSONArray, devo olhar no meu arquivo JSON do servidor, e verificar os objetos e os seus devidos tipos! neste casso...
     // "Category" é do tipo array, já "Titulo" é do tipo String e assim por diante.
-   private List<Categoria> getCategorias(JSONObject json) throws JSONException {
+   private List<Categoria> getCategorias(JSONObject json) throws JSONException { // Método conversor de JASON para objetos JAVA
 
        List<Categoria> categorias = new ArrayList<>(); //Criando a variavel de campo, para retornar a lista de categorias
 
@@ -115,8 +117,8 @@ public class CategoryTask extends AsyncTask <String, Void, List<Categoria>> {
            for (int j = 0; j < filmeArray.length(); j++) { // Loop para iterar em todos os filmes internos
                JSONObject filme = filmeArray.getJSONObject(j);
 
-               String coverUrl = filme.getString("cover_url"); // Carregando cada uma das URLs de filmes
                int id = filme.getInt("id"); // Carregando cada um dos Ids
+               String coverUrl = filme.getString("cover_url"); // Carregando cada uma das URLs de filmes
 
                //Adicionando cada url, para dentro da lista de Filmes
                Filme filmeObjeto = new Filme();
