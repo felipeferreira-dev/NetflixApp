@@ -12,9 +12,9 @@
         android:roundIcon="@mipmap/netflix_logo_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PerfilActivity"></activity>
+        <activity android:name=".controller.PerfilActivity" />
         <activity
-            android:name=".SplashScreen"
+            android:name=".controller.SplashScreen"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,12 +22,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MovieActivity">
+        <activity android:name=".controller.MovieActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value=".controller.MainActivity" />
         </activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".controller.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

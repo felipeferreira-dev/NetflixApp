@@ -1,4 +1,4 @@
-package br.com.dev.felipeferreira.netflixapp;
+package br.com.dev.felipeferreira.netflixapp.controller;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +19,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.dev.felipeferreira.netflixapp.R;
 import br.com.dev.felipeferreira.netflixapp.model.Filme;
 import br.com.dev.felipeferreira.netflixapp.model.FilmeDetalhes;
 import br.com.dev.felipeferreira.netflixapp.util.FilmesDetalhesTask;
@@ -76,8 +77,9 @@ public class MovieActivity extends AppCompatActivity implements FilmesDetalhesTa
             filmesDetalhesTask.setFilmesDetalhesLoader(this);
             filmesDetalhesTask.execute("https://tiagoaguiar.co/api/netflix/" + id);
         }
-//**********************************************************************************************************
     }
+
+    //**********************************************************************************************************
 
     //Buscando os dados do servidor, para a Descrição !!
     @Override
@@ -141,5 +143,4 @@ public class MovieActivity extends AppCompatActivity implements FilmesDetalhesTa
 
         }
     }
-//**********************************************************************************************************
 }

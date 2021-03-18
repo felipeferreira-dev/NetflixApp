@@ -3,9 +3,6 @@
 
     <item android:id="@+id/cover_drawable_perfil"
         android:drawable="@drawable/perfil">
-        <shape>
-            <corners android:radius="200dp"/>
-        </shape>
     </item>
 
     <item android:id="@+id/solid_drawable_perfil">
@@ -16,8 +13,6 @@
                 android:endColor="#EF000000"
                 android:startColor="#EF000000"
                 />
-
-            <corners android:radius="40dp"/>
         </shape>
     </item>
 

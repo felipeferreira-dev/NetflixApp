@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- NestedScrollView serve para realizar a rolagem de tela juntamente com a RecyclerView!!!
-Então quando houver recycler, utilizar o NestedScrollView-->
+
 <androidx.core.widget.NestedScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -12,7 +11,7 @@ Então quando houver recycler, utilizar o NestedScrollView-->
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context=".MovieActivity">
+    tools:context=".controller.MovieActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_activity_movie"

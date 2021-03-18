@@ -1,4 +1,4 @@
-package br.com.dev.felipeferreira.netflixapp;
+package br.com.dev.felipeferreira.netflixapp.controller;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +19,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.dev.felipeferreira.netflixapp.R;
 import br.com.dev.felipeferreira.netflixapp.model.Categoria;
 import br.com.dev.felipeferreira.netflixapp.model.Filme;
 import br.com.dev.felipeferreira.netflixapp.util.CategoryTask;

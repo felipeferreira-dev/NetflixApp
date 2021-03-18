@@ -1,10 +1,11 @@
-package br.com.dev.felipeferreira.netflixapp;
+package br.com.dev.felipeferreira.netflixapp.controller;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.res.Resources;
 import android.os.Bundle;
+
+import br.com.dev.felipeferreira.netflixapp.R;
 
 public class SplashScreen extends AppCompatActivity {
 

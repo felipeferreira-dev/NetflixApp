@@ -1,12 +1,14 @@
 package br.com.dev.felipeferreira.netflixapp.model;
 
+import android.graphics.drawable.Drawable;
+
 public class Perfil {
 
     private String txtNome;
-    private int imgPerfil;
+    private Drawable imgPerfil;
     private int id;
 
-    public Perfil(int id, String txtNome, int imgPerfil) {
+    public Perfil(int id, String txtNome, Drawable imgPerfil) {
         this.id = id;
         this.txtNome = txtNome;
         this.imgPerfil = imgPerfil;
@@ -28,11 +30,11 @@ public class Perfil {
         this.txtNome = txtNome;
     }
 
-    public int getImgPerfil() {
+    public Drawable getImgPerfil() {
         return imgPerfil;
     }
 
-    public void setImgPerfil(int imgPerfil) {
+    public void setImgPerfil(Drawable imgPerfil) {
         this.imgPerfil = imgPerfil;
     }
 }

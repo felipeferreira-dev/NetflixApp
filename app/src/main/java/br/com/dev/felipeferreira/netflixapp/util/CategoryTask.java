@@ -28,7 +28,7 @@ import br.com.dev.felipeferreira.netflixapp.model.Filme;
 public class CategoryTask extends AsyncTask <String, Void, List<Categoria>> {
     /* WeakReference é uma "referência fraca" para que se o android destruir minha main activity,
     eu não fique preso a esta atividade, mas sim que ela se destrua também! */
-    private final WeakReference <Context> context;
+    private final WeakReference <Context> context; // Um contexto é uma referência para outra activity!
     private ProgressDialog dialog;
     private CategoryLoader categoryLoader;
 
@@ -52,7 +52,6 @@ public class CategoryTask extends AsyncTask <String, Void, List<Categoria>> {
     }
 
     // Este método vai ser executado em uma outra Thread (em background) - Vai renderizar as imagens de um servidor
-    // Vai "Trazer as imagens da internet"
     @Override
     protected List<Categoria> doInBackground(String... strings) {
         String url = strings[0]; /*Pegando os parâmetros da URL*/
