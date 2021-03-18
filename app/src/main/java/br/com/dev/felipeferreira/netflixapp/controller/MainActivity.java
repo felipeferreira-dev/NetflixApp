@@ -1,3 +1,11 @@
+/*
+ * *
+ *  * Março, 03 2021
+ *  *
+ *  * @author dev.felipeferreira@gmail.com (Felipe Ferreira).
+ *
+ */
+
 package br.com.dev.felipeferreira.netflixapp.controller;
 
 import androidx.annotation.NonNull;

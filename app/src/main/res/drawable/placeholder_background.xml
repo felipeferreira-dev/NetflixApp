@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ /**
+  ~  * Março, 03 2021
+  ~  *
+  ~  * @author dev.felipeferreira@gmail.com (Felipe Ferreira).
+  ~  */
+  -->
+
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
 
     <solid
